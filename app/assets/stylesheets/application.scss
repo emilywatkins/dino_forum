@@ -13,3 +13,18 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+body{
+  background-image: url(https://static.businessinsider.com/image/55720bdc71ca1b7f308b4602/image.gif);
+  color: lightsalmon;
+}
+
+.jumbotron{
+  text-align: center;
+  font-size: 20px;
+  margin-top: 405px;
+}
+
+ul {
+  list-style-type: none;
+}

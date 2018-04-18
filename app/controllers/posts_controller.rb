@@ -32,6 +32,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @discussion = Discussion.find(params[:discussion_id])
+    @topic = @discussion.topic
+    @posts= Post.find(params[:id])
+    @posts.destroy
+    redirect_to topic_discussion_path(@topic, @discussion)
+  end
+
 private
   def post_params
     params.require(:post).permit(:body)

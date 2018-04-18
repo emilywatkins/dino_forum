@@ -1,9 +1,10 @@
 class DiscussionsController < ApplicationController
   def show
-      @topic = Topic.find(params[:topic_id])
-      @discussion = Discussion.find(params[:id])
-      render :show
-    end
+    @topic = Topic.find(params[:topic_id])
+    @discussion = Discussion.find(params[:id])
+    render :show
+  end
+
   def new
     @topic = Topic.find(params[:topic_id])
     @discussion = @topic.discussions.new

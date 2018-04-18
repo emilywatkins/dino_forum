@@ -19,6 +19,21 @@ class DiscussionsController < ApplicationController
     end
   end
 
+  def edit
+    @topic = Topic.find(params[:topic_id])
+    @discussion = Discussion.find(params[:id])
+    render :edit
+  end
+
+  def update
+    @discussion = Discussion.find(params[:id])
+    if @discussion.update(discussion_params)
+      redirect_to topic_path(@discussion.topic)
+    else
+      render :edit
+    end
+  end
+
 private
   def discussion_params
     params.require(:discussion).permit(:description)

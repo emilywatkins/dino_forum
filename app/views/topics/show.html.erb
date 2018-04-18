@@ -5,7 +5,7 @@
   <ul>
     <% @topic.discussions.each do |discussion| %>
       <li>
-        <%= discussion.description %> |
+        <%= link_to discussion.description, topic_discussion_path(@topic, discussion) %> |
         <%= link_to "Edit", edit_topic_discussion_path(@topic, discussion) %> |
         <%= link_to "Delete", topic_discussion_path(@topic, discussion),
           :data => {:confirm => "Are you sure?",
@@ -16,4 +16,6 @@
 <% else %>
   <p>There are no discussions yet!</p>
 <% end %>
+
+<p><%= link_to "Add a discussion", new_topic_discussion_path(@topic) %></p>
 <p><%= link_to "Return to topics", topics_path %></p>

@@ -10,11 +10,6 @@
         <%= link_to "Delete", topic_discussion_path(@topic, discussion),
           :data => {:confirm => "Are you sure?",
           :method => "delete"} %>
-          <% @today.each do |post| %>
-            <li>
-              <%= post.body %>
-            </li>
-          <% end %>
       </li>
     <% end %>
   </ul>

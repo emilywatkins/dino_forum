@@ -17,16 +17,5 @@
   <p>There are no posts yet!</p>
 <% end %>
 
-<ul>
-<% @featured.each do |topic| %>
-<div class="panel panel-transparent">
-  <li>
-    <%= link_to topic.title, topic_path(topic) %> |
-    <%= link_to "Edit", edit_topic_path(topic) %>
-  </li>
-</div>
-<% end %>
-</ul>
-
 <p><%= link_to "Add a post", new_discussion_post_path(@discussion) %></p>
 <p><%= link_to "Return to discussions", topic_path(@topic) %></p>

@@ -1,3 +1,15 @@
+<h1>Featured Topics</h1>
+<br>
+<ul>
+<% @featured.each do |topic| %>
+<div class="panel panel-transparent">
+  <li>
+    <%= link_to topic.title, topic_path(topic) %> |
+    <%= link_to "Edit", edit_topic_path(topic) %>
+  </li>
+</div>
+<% end %>
+</ul>
 
 <h1>Dinosaurs | <%= link_to "add a new topic", new_topic_path %></h1>
 <ul>
@@ -8,13 +20,5 @@
       <%= link_to "Edit", edit_topic_path(topic) %>
     </li>
   </div>
-  <% end %>
-
-  <h2>featured topics</h2>
-  <% @featured.each do |topic| %>
-    <li>
-      <%= link_to topic.title, topic_path(topic) %> |
-      <%= link_to "Edit", edit_topic_path(topic) %>
-    </li>
   <% end %>
 </ul>

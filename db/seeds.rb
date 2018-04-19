@@ -15,8 +15,14 @@ Post.destroy_all
   5.times do |i|
     @description = Faker::Dune.quote
     Discussion.create!(topic_id: @topic_id, description: @description)
+    @discussion_id = Discussion.last.id
+    5.times do |i|
+      @body = Faker::TheFreshPrinceOfBelAir.quote
+      Post.create!(discussion_id: @discussion_id, body: @body)
+    end
   end
 end
 
 p "Created #{Topic.count} topics"
 p "Created #{Discussion.count} discussions"
+p "Created #{Post.count} posts"

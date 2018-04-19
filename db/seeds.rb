@@ -10,10 +10,10 @@ Discussion.destroy_all
 Post.destroy_all
 
 25.times do |i|
-  Topic.create!(title: Faker::Name.name)
+  Topic.create!(title: Faker::Seinfeld.quote, is_featured: Faker::Boolean.boolean(0.2))
   @topic_id = Topic.last.id
   5.times do |i|
-    @description = Faker::Hipster.paragraph(10)
+    @description = Faker::Dune.quote
     Discussion.create!(topic_id: @topic_id, description: @description)
   end
 end

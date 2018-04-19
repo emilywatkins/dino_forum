@@ -9,4 +9,12 @@
     </li>
   </div>
   <% end %>
+
+  <h2>featured topics</h2>
+  <% @featured.each do |topic| %>
+    <li>
+      <%= link_to topic.title, topic_path(topic) %> |
+      <%= link_to "Edit", edit_topic_path(topic) %>
+    </li>
+  <% end %>
 </ul>
